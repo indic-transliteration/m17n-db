@@ -33,7 +33,7 @@ sequences such as the below.
   nch->ञ्च्, nCh->ञ्छ्, nc->ञ्च्, nC->ञ्छ्, nchh->ञ्छ्,
   nj->ञ्ज्, njh->ञ्झ्, nT->ण्ट्, nTh->ण्ठ्, nD->ण्ड्, nDh->ण्ढ्
   c->च्, C->छ्, z->श्, S->ष्, jn->ज्ञ्, R->ऋ
-  _->॑, ''->॒
+  _->॒, ''->॑
 
 For motivations and further details, see description of hi-itrans.mim.")
 

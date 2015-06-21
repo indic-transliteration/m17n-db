@@ -1,0 +1,302 @@
+;; hi-optitransv2.mim -- Hindi input method.
+
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+(input-method hi optitransv2)
+
+(description "Hindi input method by the OPTITRANS
+transliteration system. A major deviation from other transliteration systems like ITRANS and HK
+is that latin consonants are mapped to the correpsonding devanAgarI consonant *followed by the 
+vowel a*. For example, k maps to क, not क्.
+
+You can use analogs of the standard ITRANS and HK key sequences plus key
+sequences such as the below.
+
+  nak->ङ्क, nakh->ङ्ख, nag->ङ्ग, nagh->ङ्घ
+  nach->ञ्च, naCh->ञ्छ, nac->ञ्च, naC->ञ्छ, nachh->ञ्छ,
+
+The motivation behind additions made to the basic ITRANS scheme
+is described in https://sites.google.com/site/sanskritcode/optitrans,
+along with a tabulated comparison with several other
+transliteration schemes.
+
+Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
+
+(title "क")
+
+(map
+ (starter
+  (".") ("~") ("$") ("*") ("]") ((S-\ )) ((C-@))
+  ("0") ("1") ("2") ("3") ("4") ("5") ("6") ("7") ("8") ("9")
+  ("A") ("C") ("D") ("E") ("G") ("H") ("I") ("J") ("K") ("L")
+  ("M") ("N") ("O") ("R") ("S") ("T") ("U") ("Y")
+  ("a") ("b") ("c") ("d") ("e") ("f") ("g") ("h") ("i")
+  ("j") ("k") ("l") ("m") ("n") ("o") ("p") ("q") ("r")
+  ("s") ("t") ("u") ("v") ("w") ("x") ("y") ("z")
+  ((KP_1)) ((KP_2)) ((KP_3)) ((KP_4)) ((KP_5))
+  ((KP_6)) ((KP_7)) ((KP_8)) ((KP_9)) ((KP_0)))
+
+ (consonant
+  ("k" "क")
+  ("kh" "ख")
+  ("K" "ख")
+  ("g" "ग")
+  ("gh" "घ")
+  ("G" "घ")
+  (".k" "क़् ")
+  ("q" "क़")
+  (".kh" "ख़")
+  (".K" "ख़")
+  (".g" "ग़")
+  ("nak" "ङ्क")
+  ("nax" "ङ्क्ष")
+  ("nakh" "ङ्ख")
+  ("naK" "ङ्ख")
+  ("nag" "ङ्ग")
+  ("nagh" "ङ्घ")
+  ("naG" "ङ्घ")
+  ("~N" "ङ")
+  ("N^" "ङ")
+  ("ch" "च")
+  ("Ch" "छ")
+  ("c" "च")
+  ("C" "छ")
+  ("chh" "छ")
+  ("j" "ज")
+  ("jh" "झ")
+  ("J" "झ")
+  ("nach" "ञ्च")
+  ("naCh" "ञ्छ")
+  ("nac" "ञ्च")
+  ("naC" "ञ्छ")
+  ("nachh" "ञ्छ")
+  ("naj" "ञ्ज")
+  ("najh" "ञ्झ")
+  ("naJ" "ञ्झ")
+  ("~n" "ञ")
+  ("JN" "ञ")
+  ("T" "ट")
+  ("Th" "ठ")
+  ("D" "ड")
+  ("Dh" "ढ")
+  (".D" "ड़")
+  (".Dh" "ढ़")
+  ("naT" "ण्ट")
+  ("naTh" "ण्ठ")
+  ("naD" "ण्ड")
+  ("naDh" "ण्ढ")
+  ("N" "ण")
+  ("t" "त")
+  ("th" "थ")
+  ("d" "द")
+  ("dh" "ध")
+  ("n" "न")
+  (":n" "ऩ")
+  ("p" "प")
+  ("ph" "फ")
+  ("P" "फ")
+  (".ph" "फ़")
+  ("f" "फ़")
+  ("b" "ब")
+  ("bh" "भ")
+  ("B" "भ")
+  ("m" "म")
+  ("y" "य")
+  ("Y" "य़")
+  ("yh" "य़")
+  (".y" "य़")
+  ("r" "र")
+  ("l" "ल")
+  ("L" "ळ")
+  ("ld" "ळ")
+  ("v" "व")
+  ("w" "व")
+  ("sh" "श")
+  ("z" "ज़")
+  (".j" "ज़")
+;  ("z" "श")
+  ("S" "ष")
+  ("Sh" "ष")
+  ("shh" "ष")
+  ("s" "स")
+  ("h" "ह")
+  ("jn" "ज्ञ")
+  ("j~n" "ज्ञ")
+  ("jn" "ज्ञ")
+  ("GY" "ज्ञ")
+  ("dny" "ज्ञ")
+  ("x" "क्ष")
+  ("ks" "क्स")
+  ("ksh" "क्ष")
+  ("gH"  ॻ्)
+  ("jH"  ॼ्)
+  ("DH"  "ॾ")
+  ("bH"  "ॿ"))
+
+ (independent
+  ("aa" "आ")
+  ("A" "आ")
+  ("i" "इ")
+  ("ii" "ई")
+  ("I" "ई")
+  ("u" "उ")
+  ("uu" "ऊ")
+  ("U" "ऊ")
+  ("R" "ऋ")
+  ("RRi" "ऋ")
+  ("R^i" "ऋ")
+  ("LLi" "ऌ")
+  ("L^i" "ऌ")
+  ("ea" "ऍ")
+  ("ee" "ऎ")
+  ("E" "ऎ")
+  ("e" "ए")
+  ("ai" "ऐ")
+  ("oo" "ऒ")
+  ("O" "ऒ")
+  ("o" "ओ")
+  ("oa" "ऑ")
+  ("au" "औ")
+  ("RRI" "ॠ")
+  ("RR" "ॠ")
+  ("R^I" "ॠ")
+  ("LLI" "ॡ")
+  ("L^I" "ॡ")
+  (".N" "ँ")
+  (".n" "ं")
+  ("M" "ं")
+  ("H" "ः")
+  ("kH" "ೱ") 
+  ("pH" "ೲ")
+  (".a" "ऽ")
+  ("a" "्")
+  (".h" "्")
+  ("AUM" "ॐ")
+  ("OM" "ॐ")
+  ("$" "र्")
+  ((S-\ ) "‌")
+  ((C-@) "‍"))
+
+ (digit
+  ("0" "०")
+  ("1" "१")
+  ("2" "२")
+  ("3" "३")
+  ("4" "४")
+  ("5" "५")
+  ("6" "६")
+  ("7" "७")
+  ("8" "८")
+  ("9" "९")
+  ((KP_0) "०")
+  ((KP_1) "१")
+  ((KP_2) "२")
+  ((KP_3) "३")
+  ((KP_4) "४")
+  ((KP_5) "५")
+  ((KP_6) "६")
+  ((KP_7) "७")
+  ((KP_8) "८")
+  ((KP_9) "९"))
+
+ (dependent
+  ("aa" "ा")
+  ("A" "ा")
+  ("i" "ि")
+  ("ii" "ी")
+  ("I" "ी")
+  ("u" "ु")
+  ("uu" "ू")
+  ("U" "ू")
+  ("R" "ृ")
+  ("RRi" "ृ")
+  ("R^i" "ृ")
+  ("LLi" "ॢ")
+  ("L^i" "ॢ")
+  ("ea" "ॅ")
+  ("ee" "ॆ")
+  ("E" "ॆ")
+  ("e" "े")
+  ("ai" "ै")
+  ("oo" "ॊ")
+  ("O" "ॊ")
+  ("o" "ो")
+  ("oa" "ॉ")
+  ("au" "ौ")
+  ("RR" "ॄ")
+  ("RRI" "ॄ")
+  ("R^I" "ॄ")
+  ("LLI" "ॣ")
+  ("L^I" "ॣ"))
+
+ (danda
+  ("." "।")
+  (".." "।")
+  (".," "॥")
+  (". " "।" (pushback 1))
+  ((?. Return) "।" (pushback 1))
+  ((?. Tab) "।" (pushback 1))
+  (".(" "।" (pushback 1))
+  (".)" "।" (pushback 1))
+  (".[" "।" (pushback 1))
+  (".]" "।" (pushback 1))
+  (".{" "।" (pushback 1))
+  (".}" "।" (pushback 1))
+  (".'" "।" (pushback 1))
+  (".\"" "।" (pushback 1)))
+
+ (commit-key
+  ((S-C-Return)))
+
+ (backspace
+  ((BackSpace) (undo)))
+
+ (misc
+  ("//" "/")
+  ("/..." "…")
+  ("/." "॰")
+  ("/>" "→")
+  ("/<" "←")
+  ))
+
+(state
+ (init
+  (starter (pushback 1) (shift intermediate))
+  (misc))
+
+ (intermediate
+  (consonant) (shift second)
+  (independent (shift init))
+  (digit (shift init))
+  (danda (shift init))
+  (backspace)
+  (commit-key (shift init)))
+
+ (second
+  (consonant)
+  (dependent (shift init))
+  (danda (shift init))
+  (backspace)
+  (commit-key (shift init)))
+)
+
+;; Local Variables:
+;; coding: utf-8
+;; mode: emacs-lisp
+;; End:
