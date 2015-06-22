@@ -187,8 +187,6 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("kH" "ೱ") 
   ("pH" "ೲ")
   (".a" "ऽ")
-  (";" "्")
-  (".h" "्")
   ("AUM" "ॐ")
   ("OM" "ॐ")
   ("$" "र्")
@@ -246,7 +244,10 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("RRI" "ॄ")
   ("R^I" "ॄ")
   ("LLI" "ॣ")
-  ("L^I" "ॣ"))
+  ("L^I" "ॣ")
+  (";" "्")
+  (".h" "्")
+  ) ; dependent end
 
  (danda
   ("." "।")
@@ -262,7 +263,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (".{" "।" (pushback 1))
   (".}" "।" (pushback 1))
   (".'" "।" (pushback 1))
-  (".\"" "।" (pushback 1)))
+  (".\"" "।" (pushback 1))) ; danda ends
 
  (commit-key
   ((S-C-Return)))
@@ -276,7 +277,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("/." "॰")
   ("/>" "→")
   ("/<" "←")
-  ))
+  )) ; map ends
 
 (state
  (init
@@ -292,11 +293,12 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (commit-key (shift init)))
 
  (second
+  (consonant)
   (dependent (shift init))
   (danda (shift init))
   (backspace)
   (commit-key (shift init)))
-)
+) ; state ends
 
 ;; Local Variables:
 ;; coding: utf-8
