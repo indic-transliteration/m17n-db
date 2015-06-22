@@ -150,6 +150,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("bH"  "ॿ"))
 
  (independent
+  ("a" "अ")
   ("aa" "आ")
   ("A" "आ")
   ("i" "इ")
@@ -290,7 +291,6 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (commit-key (shift init)))
 
  (second
-  (consonant)
   (dependent (shift init))
   (danda (shift init))
   (backspace)
