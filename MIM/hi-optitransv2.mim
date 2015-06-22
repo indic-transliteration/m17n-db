@@ -285,7 +285,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (misc))
 
  (intermediate
-  (consonant) (shift second)
+  (consonant (shift second))
   (independent (shift init))
   (digit (shift init))
   (danda (shift init))
