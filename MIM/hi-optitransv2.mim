@@ -29,7 +29,8 @@ You can use analogs of the standard ITRANS and HK key sequences plus key
 sequences such as the below.
 
   n;k->ङ्क, n;kh->ङ्ख, n;g->ङ्ग, n;gh->ङ्घ
-  n;ch->ञ्च, n;Ch->ञ्छ, n;c->ञ्च, n;C->ञ्छ, n;chh->ञ्छ,
+  n;ch->ञ्च, n;Ch->ञ्छ, n;c->ञ्च, n;C->ञ्छ,
+  nnk->ङ्क, nnkh->ङ्ख
 
 The motivation behind additions made to the basic ITRANS scheme
 is described in https://sites.google.com/site/sanskritcode/optitrans,
