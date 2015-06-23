@@ -21,24 +21,24 @@
 (input-method hi optitransv2)
 
 (description "Hindi input method by the OPTITRANS
-transliteration system. A major deviation from other transliteration systems like ITRANS and HK
+transliteration system. 
+
+0. A major deviation from other transliteration systems like ITRANS and HK
 is that latin consonants are mapped to the correpsonding devanAgarI consonant *followed by the 
 vowel a*. For example, k maps to क, not क्.
-
-You can use analogs of the standard ITRANS and HK key sequences plus key sequences such as the below.
 
 1. panchama-varNa-s of vyanjana-varga-s 
   nnk->ङ्क, nnkh->ङ्ख, nng->ङ्ग, nngh->ङ्घ
   nnch->ञ्च, nnCh->ञ्छ, nnc->ञ्च, nnC->ञ्छ,
 
-2. Any common consonant, typed twice, yields that consonant with the virAma. The rationale is that a repeated consonant such as नन and दद is far less common than the consonants with a virAma, such as न् and द्.
+2. Any common consonant, typed twice, yields that consonant with the virAma. So, nn yields न्. The rationale is that a repeated consonant such as नन and दद is far less common than the consonants with a virAma, such as न् and द्.
 
 3. The rare character sequences that conflict with shortcuts for more frequently occuring strings can be typed using the "commit key" - (Ctrl + Shift  + Enter), or with the use of the arrow key. 
 For example, sh yields श. But if one wanted to type सह, one can type: s<Commit key>h or s<left arrow, right arrow>h.
 
 Examples:
 kml or kamala - कमल 
-sikkta - सिक्त
+sikkt - सिक्त
 shn;kr  or shankara or shnnkr- शङ्कर।
 sn;cit or snncit - सञ्चित
 s<Commit key>h or s<left arrow, right arrow>h - सह
