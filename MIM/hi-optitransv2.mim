@@ -204,10 +204,18 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("R^I" "ॠ")
   ("LLI" "ॡ")
   ("L^I" "ॡ")
-  (".a" "ऽ")
   ("AUM" "ॐ")
   ("OM" "ॐ")
   ("$" "र्")
+  
+  ; Visarga and the like may appear after a vowel. So, they aren't expected just in the dependent state.
+  (".a" "ऽ")
+  (".N" "ँ")
+  (".n" "ं")
+  ("M" "ं")
+  ("H" "ः")
+  ("kH" "ೱ") 
+  ("pH" "ೲ")
   ((S-\ ) "‌")
   ((C-@) "‍")) ; independent ends
 
@@ -265,12 +273,6 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("L^I" "ॣ")
   (";" "्")
   (".h" "्")
-  (".N" "ँ")
-  (".n" "ं")
-  ("M" "ं")
-  ("H" "ः")
-  ("kH" "ೱ") 
-  ("pH" "ೲ")
   ) ; dependent end
 
  (danda
