@@ -172,6 +172,11 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("nnj" "ञ्ज")
   ("nnjh" "ञ्झ")
   ("nnJ" "ञ्झ")
+
+  ("nnT" "ण्ट")
+  ("nnTh" "ण्ठ")
+  ("nnD" "ण्ड")
+  ("nnDh" "ण्ढ")
   ) ; consonant ends
 
  (independent
