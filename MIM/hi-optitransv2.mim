@@ -38,8 +38,11 @@ For example, sh yields श. But if one wanted to type सह, one can type: s<Co
 
 Examples:
 kml or kamala - कमल 
+sikkta - सिक्त
 shn;kr  or shankara or shnnkr- शङ्कर।
-sn;cit - सञ्चित
+sn;cit or snncit - सञ्चित
+s<Commit key>h or s<left arrow, right arrow>h - सह
+
 
 The motivation behind additions made to the basic ITRANS scheme
 is described in https://sites.google.com/site/sanskritcode/optitrans,
