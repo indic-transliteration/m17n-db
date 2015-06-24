@@ -106,7 +106,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("ph" "फ")
   ("P" "फ")
   (".ph" "फ़")
-  ("F" "फ़")
+  ("f" "फ़")
   ("b" "ब")
   ("bh" "भ")
   ("B" "भ")
@@ -132,13 +132,11 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("ttr" "त्र")
   ("jjn" "ज्ञ")
   ("j~n" "ज्ञ")
-  ("GY" "ज्ञ")
-  ("dny" "ज्ञ")
   ("x" "क्ष")
   ("gH"  ॻ)
   ("jH"  ॼ)
   ("DH"  "ॾ")
-  ("bH"  "ॿ")
+  ("BH"  "ॿ")
 
   ; nn shortcuts
   ("nnk" "ङ्क")
@@ -213,6 +211,12 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("ss" "स्")
   ("hh" "ह्")
   ("xx" "क्ष्")
+  
+  ; nn shortcuts
+  ("nngg" "ङ्ग्")
+  ("nnghgh" "ङ्घ्")
+  ("nnGG" "ङ्घ्")
+  
 ) ; consonant_with_viraama ends
 
  (independent
@@ -280,6 +284,10 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ((KP_7) "७")
   ((KP_8) "८")
   ((KP_9) "९")) ; digit ends
+
+ (udattta
+  ("_" "॒")
+  ("''" "॑"))
 
  (dependent
   ("a" "")
@@ -356,6 +364,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (independent (shift init))
   (digit (shift init))
   (danda (shift init))
+  (udattta (shift init))
   (backspace)
   (commit-key (shift init)))
 
@@ -364,6 +373,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (consonant_with_viraama (shift init))
   (dependent (shift init))
   (danda (shift init))
+  (udattta (shift init))
   (backspace)
   (commit-key (shift init)))
 ) ; state ends
