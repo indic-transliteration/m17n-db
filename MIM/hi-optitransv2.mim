@@ -351,12 +351,15 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("/." "॰")
   ("/>" "→")
   ("/<" "←")
-  )) ; map ends
+  ) ;misc ends
+  ) ; map ends
 
 (state
  (init
   (starter (pushback 1) (shift intermediate))
-  (misc))
+  (udattta)
+  (misc)
+  )
 
  (intermediate
   (consonant (shift second))
@@ -364,7 +367,6 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (independent (shift init))
   (digit (shift init))
   (danda (shift init))
-  (udattta (shift init))
   (backspace)
   (commit-key (shift init)))
 
@@ -373,7 +375,6 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (consonant_with_viraama (shift init))
   (dependent (shift init))
   (danda (shift init))
-  (udattta (shift init))
   (backspace)
   (commit-key (shift init)))
 ) ; state ends
