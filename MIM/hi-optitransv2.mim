@@ -222,12 +222,12 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   
   ; jihvAmUlIya and upadhmAnIya shortcuts
   ("H" "ः")
-  ("Hk" "ೱक") 
-  ("Hp" "ೲप")
-  ("Hkh" "ೱख") 
-  ("Hph" "ೲफ")
-  ("HK" "ೱख") 
-  ("HP" "ೲफ")
+  ("Hk" "ᳵक") 
+  ("Hp" "ᳶप")
+  ("Hkh" "ᳵख") 
+  ("Hph" "ᳶफ")
+  ("HK" "ᳵख") 
+  ("HP" "ᳶफ")
 ) ; consonant_with_viraama ends
 
  (independent
