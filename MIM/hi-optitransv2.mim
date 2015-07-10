@@ -54,16 +54,14 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 (title "क")
 
 (map
- (starter
-  (".") (";") ("~") ("$") ("*") ("]") ((S-\ )) ((C-@))
-  ("0") ("1") ("2") ("3") ("4") ("5") ("6") ("7") ("8") ("9")
-  ("A") ("B") ("C") ("D") ("E") ("G") ("H") ("I") ("J") ("K") ("L")
-  ("M") ("N") ("O") ("R") ("S") ("T") ("U") ("Y")
+ (non_init_keys
+  (".") (";") ("~") ("$")
+  ("A") ("B") ("C") ("D") ("E") ("F") ("G") ("H") ("I") ("J") ("K") ("L")
+  ("M") ("N") ("O") ("P") ("Q") ("R") ("S") ("T") ("U") ("V") ("W") ("X") ("Y") ("Z") 
   ("a") ("b") ("c") ("d") ("e") ("f") ("g") ("h") ("i")
   ("j") ("k") ("l") ("m") ("n") ("o") ("p") ("q") ("r")
   ("s") ("t") ("u") ("v") ("w") ("x") ("y") ("z")
-  ((KP_1)) ((KP_2)) ((KP_3)) ((KP_4)) ((KP_5))
-  ((KP_6)) ((KP_7)) ((KP_8)) ((KP_9)) ((KP_0)))
+  )
 
  (consonant
   ("k" "क")
@@ -141,25 +139,25 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ; ("BH"  "ॿ")
 
   ; nn shortcuts
-  ("nnk" "ङ्क")
-  ("nnx" "ङ्क्ष")
-  ("nnkh" "ङ्ख")
-  ("nnK" "ङ्ख")
-  ("nng" "ङ्ग")
-  ("nngh" "ङ्घ")
-  ("nnG" "ङ्घ")
-  ("nnch" "ञ्च")
-  ("nnCh" "ञ्छ")
-  ("nnc" "ञ्च")
-  ("nnC" "ञ्छ")
-  ("nnj" "ञ्ज")
-  ("nnjh" "ञ्झ")
-  ("nnJ" "ञ्झ")
+  ("nnk" "ङ्" (pushback 1))
+  ("nnx" "ङ्" (pushback 1))
+  ("nnkh" "ङ्" (pushback 1))
+  ("nnK" "ङ्" (pushback 1))
+  ("nng" "ङ्" (pushback 1))
+  ("nngh" "ङ्" (pushback 1))
+  ("nnG" "ङ्" (pushback 1))
+  ("nnch" "ञ्" (pushback 1))
+  ("nnCh" "ञ्" (pushback 1))
+  ("nnc" "ञ्" (pushback 1))
+  ("nnC" "ञ्" (pushback 1))
+  ("nnj" "ञ्" (pushback 1))
+  ("nnjh" "ञ्" (pushback 1))
+  ("nnJ" "ञ्" (pushback 1))
 
-  ("nnT" "ण्ट")
-  ("nnTh" "ण्ठ")
-  ("nnD" "ण्ड")
-  ("nnDh" "ण्ढ")
+  ("nnT" "ण्" (pushback 1))
+  ("nnTh" "ण्" (pushback 1))
+  ("nnD" "ण्" (pushback 1))
+  ("nnDh" "ण्" (pushback 1))
   ) ; consonant ends
 
 (consonant_with_viraama
@@ -214,21 +212,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("ss" "स्")
   ("hh" "ह्")
   ("xx" "क्ष्")
-  
-  ; nn shortcuts
-  ("nngg" "ङ्ग्")
-  ("nnghgh" "ङ्घ्")
-  ("nnGG" "ङ्घ्")
-  
-  ; jihvAmUlIya and upadhmAnIya shortcuts
-  ("H" "ः")
-  ("Hk" "ᳵक") 
-  ("Hp" "ᳶप")
-  ("Hkh" "ᳵख") 
-  ("Hph" "ᳶफ")
-  ("HK" "ᳵख") 
-  ("HP" "ᳶफ")
-) ; consonant_with_viraama ends
+  ) ; consonant_with_viraama ends
 
  (independent
   ("a" "अ")
@@ -262,16 +246,30 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("L^I" "ॡ")
   ("AUM" "ॐ")
   ("OM" "ॐ")
-  ("$" "र्")
   
-  ; Visarga and the like may appear after a vowel. So, they aren't expected just in the dependent state.
   (".a" "ऽ")
-  (".N" "ँ")
-  ("H" "ः")
-  ("M" "ं")
   ((S-\ ) "‌")
   ((C-@) "‍")) ; independent ends
 
+ (ayogavAhas
+  ; Visarga and the like may appear after a vowel. So, they aren't expected just in the dependent state.
+  (".N" "ँ")
+  ("M" "ं")
+  ("H" "ः")
+  ("HH" "ᳲ")  ; ardhavisarga - often used to denote jihvAmUlIya and upadhmAnIya. 
+ ) ; ayogavAhas end
+
+ (ayogavAhas_with_consonant
+   ; jihvAmUlIya and upadhmAnIya shortcuts
+  ("Hk" "ᳵ" (pushback 1)) 
+  ("Hp" "ᳶ" (pushback 1))
+  ("Hkh" "ᳵ" (pushback 1)) 
+  ("Hph" "ᳶ" (pushback 1))
+  ("HK" "ᳵ" (pushback 1)) 
+  ("HP" "ᳶ" (pushback 1))
+  ) ; ayogavAhas_with_consonant ends
+
+ 
  (digit
   ("0" "०")
   ("1" "१")
@@ -364,28 +362,33 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ) ; map ends
 
 (state
- (init
-  (starter (pushback 1) (shift intermediate))
+ (state_init
+  (non_init_keys (pushback 1) (shift state_indic_letter))
   (udattta)
   (misc)
+  (digit)
+  (commit-key)
   )
 
- (intermediate
-  (consonant (shift second))
-  (consonant_with_viraama (shift init))
-  (independent (shift init))
-  (digit (shift init))
-  (danda (shift init))
+ (state_indic_letter
+  (consonant (shift state_consonant_pressed))
+  (ayogavAhas_with_consonant (shift state_consonant_pressed))
+  (consonant_with_viraama (shift state_init))
+  (independent (shift state_init))
+  (danda (shift state_init))
   (backspace)
-  (commit-key (shift init)))
+  (ayogavAhas (shift state_init))
+  )
 
- (second
+ (state_consonant_pressed
   (consonant)
-  (consonant_with_viraama (shift init))
-  (dependent (shift init))
-  (danda (shift init))
+  (ayogavAhas_with_consonant)
+  (consonant_with_viraama (shift state_init))
+  (dependent (shift state_init))
+  (danda (shift state_init))
   (backspace)
-  (commit-key (shift init)))
+  (ayogavAhas (shift state_init))
+  )
 ) ; state ends
 
 ;; Local Variables:
