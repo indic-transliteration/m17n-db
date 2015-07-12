@@ -159,7 +159,8 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("nnD" "ण्" (pushback 1))
   ("nnDh" "ण्" (pushback 1))
 
-  ("nn k " "ङ् " (pushback 1))
+  ; nn shortcuts with space
+  ("nn k" "ङ् " (pushback 1))
   ("nn x" "ङ् " (pushback 1))
   ("nn kh" "ङ् " (pushback 1))
   ("nn K" "ङ् " (pushback 1))
