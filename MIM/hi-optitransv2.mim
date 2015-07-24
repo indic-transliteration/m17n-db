@@ -86,7 +86,6 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("jh" "झ")
   ("J" "झ")
   ("~n" "ञ")
-  ("JN" "ञ")
   ("T" "ट")
   ("Th" "ठ")
   ("D" "ड")
@@ -127,9 +126,8 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("shh" "ष")
   ("s" "स")
   ("h" "ह")
-  ("ttr" "त्र")
   ("jjn" "ज्ञ")
-  ("j~n" "ज्ञ")
+  ("JN" "ज्ञ")
   ("x" "क्ष")
   
   ; Best keys for the below are not clear.
@@ -234,6 +232,8 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("ss" "स्")
   ("hh" "ह्")
   ("xx" "क्ष्")
+  ("jjnjjn" "ज्ञ्")
+  ("JNJN" "ज्ञ्")
   ) ; consonant_with_viraama ends
 
  (independent
