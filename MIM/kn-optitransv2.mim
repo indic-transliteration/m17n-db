@@ -1,4 +1,5 @@
 ;; kn-optitransv2.mim -- Kannada input method.
+;; Copyright (C) 2015  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
 
 ;; This file is part of the m17n database; a sub-part of the m17n
 ;; library.
