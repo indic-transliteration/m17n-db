@@ -404,6 +404,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
  (state_consonant_pressed
   (consonant)
   (ayogavAhas_with_consonant)
+  (consonant_with_space (shift state_init))
   (consonant_with_viraama (shift state_init))
   (dependent (shift state_init))
   (danda (shift state_init))
