@@ -163,6 +163,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 (consonant_with_space
   ; nn shortcuts with space
   ("nn " "न् ")
+  ("nn  " "न् ") ; handle the case where the transformation to ङ् etc.. is not desired, even when followed by a character like k.
   ("nn k" "ङ् " (pushback 1))
   ("nn x" "ङ् " (pushback 1))
   ("nn K" "ङ् " (pushback 1))

@@ -153,6 +153,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 
 (consonant_with_space
   ("nn " "ನ್ ")
+  ("nn  " "ನ್ ") ; handle the case where the transformation to ಙ್ etc.. is not desired, even when followed by a character like k.
   ("nn k" "ಙ್ " (pushback 1))
   ("nn x" "ಙ್ " (pushback 1))
   ("nn K" "ಙ್ " (pushback 1))
