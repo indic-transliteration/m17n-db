@@ -367,6 +367,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("/." "॰")
   ("/>" "→")
   ("/<" "←")
+  ("/\\" "🙏")
   ) ;misc ends
   ) ; map ends
 
