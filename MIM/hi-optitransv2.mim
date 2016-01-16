@@ -356,10 +356,11 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (".h" "्")
   ) ; dependent end
 
- (danda
+ (dot_start
   ("." "।")
   (".." "।")
   (".," "॥")
+  ("./" "॰")
   (". " "।" (pushback 1))
   ((?. Return) "।" (pushback 1))
   ((?. Tab) "।" (pushback 1))
@@ -370,29 +371,19 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (".{" "।" (pushback 1))
   (".}" "।" (pushback 1))
   (".'" "।" (pushback 1))
-  (".\"" "।" (pushback 1))) ; danda ends
+  (".\"" "।" (pushback 1))) ; dot_start ends
 
  (commit-key
   ((S-C-Return)))
 
  (backspace
   ((BackSpace) (undo)))
-
- (misc
-  ("//" "/")
-  ("/..." "…")
-  ("/." "॰")
-  ("/>" "→")
-  ("/<" "←")
-  ("/\\" "🙏")
-  ) ;misc ends
   ) ; map ends
 
 (state
  (state_init
   (non_init_keys (pushback 1) (shift state_indic_letter))
   (udattta)
-  (misc)
   (digit)
   (commit-key)
   )
@@ -403,7 +394,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (consonant_with_space (shift state_init))
   (consonant_with_viraama (shift state_init))
   (independent (shift state_init))
-  (danda (shift state_init))
+  (dot_start (shift state_init))
   (backspace)
   (ayogavAhas (shift state_init))
   )
@@ -414,7 +405,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (consonant_with_space (shift state_init))
   (consonant_with_viraama (shift state_init))
   (dependent (shift state_init))
-  (danda (shift state_init))
+  (dot_start (shift state_init))
   (backspace)
   (ayogavAhas (shift state_init))
   )
