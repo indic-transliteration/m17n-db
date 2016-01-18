@@ -25,6 +25,11 @@ All key sequences start with the key \"/\".
 This input methods is registered as one of fallback input methods by default.
 If you prefer shorter key sequences, try \"ssymbol\"."))
 
+;; Some references:
+;;  General lists: http://fsymbols.com/computer/ http://emojipedia.org/
+;;  * Emoticon shortcuts in MS Office: https://support.office.com/en-us/article/Keyboard-shortcuts-for-emoticons-dda403dc-ffe9-4cbb-9b9f-aed845ff8b8c
+;;  * Facebook shortcuts: http://www.shoutmeloud.com/list-of-facebook-keyboard-shortcuts-and-emoticons.html http://emojicodes.com/
+
 (map
  ;; All starter keys must be registered here.
  (starter ("/" "/"))
