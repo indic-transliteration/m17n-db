@@ -360,22 +360,12 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 
  (backspace
   ((BackSpace) (undo)))
-
- (misc
-  ("//" "/")
-  ("/..." "…")
-  ("/." "॰")
-  ("/>" "→")
-  ("/<" "←")
-  ("/\\" "🙏")
-  ) ;misc ends
   ) ; map ends
 
 (state
  (state_init
   (non_init_keys (pushback 1) (shift state_indic_letter))
   (udattta)
-  (misc)
   (digit)
   (commit-key)
   )
