@@ -66,6 +66,7 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
   ("*" "★")    
   ("c" "✔")
   ("x" "✘")
+  ("iii" "🎆") ; fireworks
   ))
 
 (state
