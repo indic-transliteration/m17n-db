@@ -57,7 +57,7 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
   ("c" "✔")
   ("x" "✘")
   ("iii" "🎆") ; fireworks
-  )
+ ) ; map ends
 
  (arrows
   ("->" (delete @0) ("→←↑↓" "👉👈👆👇✋" "►◄▲▾◤◥◣◢")))
@@ -69,7 +69,7 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
   (":)" (delete @0) ("☺😃😅😆😉" "😏😛😜😝😋" "💏💋😍😘😚😽😻"))
 
  (face-unhappy
-  (":(" (delete @0) ("😢😡"))
+  (":/" (delete @0) ("😢😡")))
 
  (heart
   ("<3" (delete @0) ("♥♡💔💖💘💓" "💞💕💌💑")))
