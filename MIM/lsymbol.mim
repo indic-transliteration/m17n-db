@@ -29,6 +29,7 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
 ;  * Where appropriate, provide access to a broad category of symbols by using the technique of showing multiple alternatives based on the starter keys pressed (eg: face, hand and heart symbols below).
 ;    * The user can easily select the appropriate symbol using ↑,↓,→,← (or C-p, C-n, C-f, C-b) keys and the digits.
 ;    * Prefer restricting the size of a character cluster to 6 - so that the user can use digits more accessible to the left hand, with arrow keys using the right hand. For example, prefer "♥♡💔💖💘💓" "💞💕💌" to "♥♡💔💖💘💓💞💕💌".
+;    * Within a group (say hand gestures), cluster semantically similar symbols together.
 ;  * Keyboard shortcuts used in popular applications provide clues as to what the appropriate
 
 ; Some references:
@@ -49,10 +50,6 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
   ("/" "/")
   ("..." "…")
   
-  ; arrows
-  ("->" "→")
-  ("<-" "←")
-  
   ; other symbols    
   ("f" "🌹")
   ("$" "卐")
@@ -62,14 +59,20 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
   ("iii" "🎆") ; fireworks
   )
 
- (hand-gestures
-  ("||" (delete @0) ("👍👎👌👏🙏")))
+ (arrows
+  ("->" (delete @0) ("→←↑↓" "👉👈👆👇✋" "►◄▲▾◤◥◣◢")))
 
- (face
-  (":)" (delete @0) ("☺😃😛😉😢😡")))
+ (hand-gestures
+  ("||" (delete @0) ("👍👎👌✋👏🙆" "🙏👋🙌✌✊" "💁💪👊✍")))
+
+ (face-happy
+  (":)" (delete @0) ("☺😃😅😆😉" "😏😛😜😝😋" "💏💋😍😘😚😽😻"))
+
+ (face-unhappy
+  (":(" (delete @0) ("😢😡"))
 
  (heart
-  ("<3" (delete @0) ("♥♡💔💖💘💓" "💞💕💌")))
+  ("<3" (delete @0) ("♥♡💔💖💘💓" "💞💕💌💑")))
   
  (test
   ("tt" (delete @0) ("ABCDEFGH" "IJKLMNOP" "QRST" "UV" "WXYZ")))
@@ -121,7 +124,9 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
  (main
   (map (move @<) (delete 1) (move @>) (shift init))
   (hand-gestures (show) (shift select))
-  (face (show) (shift select))
+  (face-happy (show) (shift select))
+  (face-unhappy (show) (shift select))
+  (arrows (show) (shift select))
   (heart (show) (shift select))
   (test (show) (shift select))
   (nil (hide) (shift check-undo)))
