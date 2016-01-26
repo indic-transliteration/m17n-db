@@ -25,10 +25,19 @@ All key sequences start with the key \"/\".
 This input methods is registered as one of fallback input methods by default.
 If you prefer shorter key sequences, try \"ssymbol\"."))
 
-;; Some references:
-;;  General lists: http://fsymbols.com/computer/ http://emojipedia.org/
-;;  * Emoticon shortcuts in MS Office: https://support.office.com/en-us/article/Keyboard-shortcuts-for-emoticons-dda403dc-ffe9-4cbb-9b9f-aed845ff8b8c
-;;  * Facebook shortcuts: http://www.shoutmeloud.com/list-of-facebook-keyboard-shortcuts-and-emoticons.html http://emojicodes.com/
+; Some guidelines for determining shortcut sequences:
+;  * Where appropriate, provide access to a broad category of symbols by using the technique of showing multiple alternatives based on the starter keys pressed (eg: face, hand and heart symbols below).
+;    * The user can easily select the appropriate symbol using ↑,↓,→,← (or C-p, C-n, C-f, C-b) keys and the digits.
+;    * Prefer restricting the size of a character cluster to 6 - so that the user can use digits more accessible to the left hand, with arrow keys using the right hand. For example, prefer "♥♡💔💖💘💓" "💞💕💌" to "♥♡💔💖💘💓💞💕💌".
+;  * Keyboard shortcuts used in popular applications provide clues as to what the appropriate
+
+; Some references:
+; * Some statistics are available online. Example http://www.scribd.com/doc/262594751/SwiftKey-Emoji-Report (guardian highlight) and http://emojitracker.com/ . Although, this is biased towards populations who are already tech savvy + have the time to type emojis easily and does not give as much weight to people who are just beginning to use IM/ digital communication.
+; * There are other indications of popularity - such as other products (say MS Office or Facebook or Google Hangouts, who would presumably have adapted towards user expectations) providing shortcuts for these emoji-s.
+;     * General lists: http://fsymbols.com/computer/ http://emojipedia.org/
+;     * Emoticon shortcuts in MS Office: https://support.office.com/en-us/article/Keyboard-shortcuts-for-emoticons-dda403dc-ffe9-4cbb-9b9f-aed845ff8b8c
+;     * Facebook shortcuts: http://www.shoutmeloud.com/list-of-facebook-keyboard-shortcuts-and-emoticons.html http://emojicodes.com/
+
 
 (map
  ;; All starter keys must be registered here.
@@ -42,28 +51,7 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
   
   ; arrows
   ("->" "→")
-  (">" "→")
-  ("<" "←")
   ("<-" "←")
-  
-  ; face gestures
-  (":)" "☺")
-  (":D" "😃")
-  (":p" "😛")
-  (";)" "😉")
-  (":'(" "😢")  ; sad
-  (">:(" "😡")  ; angry
-  
-  ; hand gestures
-  ("y" "👍")  
-  ("n" "👎")  
-  ("||o" "👌")  
-  ("||" "👏") 
-  ("\\" "🙏")
-
-  ; heart symbols
-  ("<3" "♥")
-  ("</3" "💔")
   
   ; other symbols    
   ("f" "🌹")
@@ -72,14 +60,95 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
   ("c" "✔")
   ("x" "✘")
   ("iii" "🎆") ; fireworks
-  ))
+  )
+
+ (hand-gestures
+  ("||" (delete @0) ("👍👎👌👏🙏")))
+
+ (face
+  (":)" (delete @0) ("☺😃😛😉😢😡")))
+
+ (heart
+  ("<3" (delete @0) ("♥♡💔💖💘💓" "💞💕💌")))
+  
+ (test
+  ("tt" (delete @0) ("ABCDEFGH" "IJKLMNOP" "QRST" "UV" "WXYZ")))
+
+ ;; Typing 1, 2, ..., 0 selects the 0th, 1st, ..., 9th candidate.
+ (choose
+  ("1" (select 0))
+  ("2" (select 1))
+  ("3" (select 2))
+  ("4" (select 3))
+  ("5" (select 4))
+  ("6" (select 5))
+  ("7" (select 6))
+  ("8" (select 7))
+  ("9" (select 8))
+  ("0" (select 9)))
+
+ (change-candidate
+  ((Left) (select @-))
+  ((C-b) (select @-))
+  ((Right) (select @+))
+  ((C-f) (select @+))
+  ((Up) (select @\[))
+  ((C-p) (select @\[))
+  ((Down) (select @\]))
+  ((C-n) (select @\])))
+
+ (focus-move
+  ;; When an input spot is moved, commit the current predit by shifting
+  ;; to init.
+  ((input-focus-move)))
+
+ (focus-change
+  ;; When an input focus is out or in, keep the current preedit.
+  ((input-focus-out) (set KK @@) (sub KK 1) (undo KK))
+  ((input-focus-in) (set KK @@) (sub KK 1) (undo KK)))
+
+ (backspace
+  ((BackSpace)))
+
+ (commit-preedit
+  ((S-\ ))
+  ((\ ))))
 
 (state
  (init
-  (starter (shift main)))
+  (starter (show) (shift main)))
 
  (main
-  (map (move @<) (delete 1) (move @>) (shift init))))
+  (map (move @<) (delete 1) (move @>) (shift init))
+  (hand-gestures (show) (shift select))
+  (face (show) (shift select))
+  (heart (show) (shift select))
+  (test (show) (shift select))
+  (nil (hide) (shift check-undo)))
+
+ (check-undo
+  ;; When Backspace is typed, cancel the last input.
+  (backspace (undo))
+  (focus-move (shift init))
+  (focus-change)
+  ;; When anything else is typed, produce the current candidate (if
+  ;; any), and re-handle the last input in "init" state.
+  (nil (hide) (shift init)))
+
+ (select
+  (t (set K @@) (sub K 1))
+  ;; When a number is typed, select the corresponding canidate,
+  ;; produce it, and shift to "init" state.
+  (focus-move (shift init))
+  (focus-change)
+  (choose (hide) (shift init))
+  (change-candidate)
+  (backspace (undo K))
+  ;; When key to force committing, commit the current preedit.
+  (commit-preedit (shift init))
+  ;; When anything else is typed, produce the current candidate,
+  ;; and re-handle the last input in "init" state.
+  (nil (hide) (shift init))))
 
 ;; Local Variables:
 ;; mode: lisp
