@@ -73,7 +73,7 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
   ("<3" (delete @0) ("♥♡💔💖💘💓" "💞💕💌💑")))
   
  (asterix-like
-  ("*" (delete @0) ("🌹💐❁✽" "⭐🌟💫✨🌠✯" "❂✷✸✹☄")))
+  ("*" (delete @0) ("🌹💐❁✽" "⭐🌟💫✨🌠✯" "☀❂✷✸✹☄")))
 
  (test
   ("tt" (delete @0) ("ABCDEFGH" "IJKLMNOP" "QRST" "UV" "WXYZ")))
