@@ -51,9 +51,7 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
   ("..." "…")
   
   ; other symbols    
-  ("f" "🌹")
   ("$" "卐")
-  ("*" "★")    
   ("c" "✔")
   ("x" "✘")
   ("iii" "🎆") ; fireworks
@@ -74,6 +72,9 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
  (heart
   ("<3" (delete @0) ("♥♡💔💖💘💓" "💞💕💌💑")))
   
+ (asterix-like
+  ("*" (delete @0) ("🌹💐❁✽" "⭐🌟💫✨🌠✯" "❂✷✸✹☄")))
+
  (test
   ("tt" (delete @0) ("ABCDEFGH" "IJKLMNOP" "QRST" "UV" "WXYZ")))
 
@@ -126,6 +127,7 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
   (hand-gestures (show) (shift select))
   (face-happy (show) (shift select))
   (face-unhappy (show) (shift select))
+  (asterix-like (show) (shift select))
   (arrows (show) (shift select))
   (heart (show) (shift select))
   (test (show) (shift select))
