@@ -80,6 +80,9 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
  (spiritual
   ("&" (delete @0) ("☸☯♋☬卍卐" "✝☦✙✡☪" "💀☠👹👼😇" "💒⛪")))
   
+ (legal
+  ("@" (delete @0) ("©®™§")))
+  
  (test
   ("tt" (delete @0) ("ABCDEFGH" "IJKLMNOP" "QRST" "UV" "WXYZ")))
 
@@ -135,6 +138,7 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
   (asterix-like (show) (shift select))
   (arrows (show) (shift select))
   (spiritual (show) (shift select))
+  (legal (show) (shift select))
   (money (show) (shift select))
   (heart (show) (shift select))
   (test (show) (shift select))
