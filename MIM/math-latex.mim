@@ -33,7 +33,10 @@
 (title "Math: latex")
 
 (map
+  ;; All starter keys must be registered here.
+  (starter ("\\" ""))
   (math
+    ("\\" "\\")
     ("int"         "∫")       ; integral
     ("Int"         "∫")       ; integral
     ("Sum"         "∑")       ; n-ary Sum
@@ -321,12 +324,15 @@
     ("dd"       "⇔")
     ("barl"     "↦")
     ("mapsto"   "↦")
-  )
-)
+  ) ; math ends
+) ; map ends
 
 (state
   (init
-    (math)
-  )
-)
+    (starter (shift main))
+  ) ; init ends
+ (main
+  (math (shift init))
+ ) ; main ends
+) ; state ends
     
