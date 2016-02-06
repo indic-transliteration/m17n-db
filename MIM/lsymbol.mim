@@ -21,24 +21,63 @@
 (input-method t lsymbol)
 
 (description (_"Input method for symbols with relatively longer key sequences.
-All key sequences start with the key \"/\".
+It provides access to a broad category of symbols by using the
+technique of showing multiple alternatives based on the starter keys
+pressed.  For instance,
+   \"/->\" -> arrows (e.g. →↑)
+   \"/||\" -> hand genstures (e.g. 👍👎)
+   \"/:)\" -> happy faces (e.g. ☺😃)
+   \"/:(\" -> unhappy faces (e.g. 😢😡)
+   \"/<3\" -> hearts (e.g. ♥♡)
+   \"/*\"  -> flowers and stars (e.g. 🌹★)
+   \"&&\" -> spiritual (e.g. ☸☯)   \"/xx\" -> checks (e.g. ✔✘)
+   \"$\" -> currency (€£)          \"@\" -> legal/text signs (e.g "©¶")
+
+The user can select the appropriate symbol using ↑,↓,→,←
+(or C-p, C-n, C-f, C-b) keys and/or the digits.
+
+Other miscellaneous keys are:
+   \"//\" -> \"/\"
+   \"/...\" -> \"…\"
+
 This input methods is registered as one of fallback input methods by default.
-If you prefer shorter key sequences, try \"ssymbol\"."))
+See the documentation page of m17n input methods for more detail.
+  <http://www.nongnu.org/m17n/manual-en/m17nDBData.html#mim-list>"))
 
-; Some guidelines for determining shortcut sequences:
-;  * Where appropriate, provide access to a broad category of symbols by using the technique of showing multiple alternatives based on the starter keys pressed (eg: face, hand and heart symbols below).
-;    * The user can easily select the appropriate symbol using ↑,↓,→,← (or C-p, C-n, C-f, C-b) keys and the digits.
-;    * Prefer restricting the size of a character cluster to 6 - so that the user can use digits more accessible to the left hand, with arrow keys using the right hand. For example, prefer "♥♡💔💖💘💓" "💞💕💌" to "♥♡💔💖💘💓💞💕💌".
-;    * Within a group (say hand gestures), cluster semantically similar symbols together.
-;  * Keyboard shortcuts used in popular applications provide clues as to what the appropriate
+;; Some guidelines for determining shortcut sequences:
 
-; Some references:
-; * Some statistics are available online. Example http://www.scribd.com/doc/262594751/SwiftKey-Emoji-Report (guardian highlight) and http://emojitracker.com/ . Although, this is biased towards populations who are already tech savvy + have the time to type emojis easily and does not give as much weight to people who are just beginning to use IM/ digital communication.
-; * There are other indications of popularity - such as other products (say MS Office or Facebook or Google Hangouts, who would presumably have adapted towards user expectations) providing shortcuts for these emoji-s.
-;     * General lists: http://fsymbols.com/computer/ http://emojipedia.org/
-;     * Emoticon shortcuts in MS Office: https://support.office.com/en-us/article/Keyboard-shortcuts-for-emoticons-dda403dc-ffe9-4cbb-9b9f-aed845ff8b8c
-;     * Facebook shortcuts: http://www.shoutmeloud.com/list-of-facebook-keyboard-shortcuts-and-emoticons.html http://emojicodes.com/
+;;  * Where appropriate, provide access to a broad category of
+;;  symbols by using the technique of showing multiple alternatives
+;;  based on the starter keys pressed.
+;;
+;;  * Prefer restricting the size of a character cluster to 6 - so
+;;  that the user can use digits more accessible to the left hand,
+;;  with arrow keys using the right hand. For example, prefer
+;;  "♥♡💔💖💘💓" "💞💕💌" to "♥♡💔💖💘💓💞💕💌".
 
+;;  * Within a group (say hand gestures), cluster semantically
+;;  similar symbols together.
+
+;;  * Keyboard shortcuts used in popular applications provide clues
+;;  as to what the appropriate
+
+;; Some references:
+
+;; * Some statistics are available online. Example
+;; http://www.scribd.com/doc/262594751/SwiftKey-Emoji-Report
+;; (guardian highlight) and http://emojitracker.com/.  Although, this
+;; is biased towards populations who are already tech savvy + have
+;; the time to type emojis easily and does not give as much weight to
+;; people who are just beginning to use IM/ digital communication.
+
+;; * There are other indications of popularity - such as other
+;; products (say MS Office or Facebook or Google Hangouts, who would
+;; presumably have adapted towards user expectations) providing
+;; shortcuts for these emoji-s.
+;;
+;;    * General lists: http://fsymbols.com/computer/ http://emojipedia.org/
+;;    * Emoticon shortcuts in MS Office: https://support.office.com/en-us/article/Keyboard-shortcuts-for-emoticons-dda403dc-ffe9-4cbb-9b9f-aed845ff8b8c
+;;    * Facebook shortcuts: http://www.shoutmeloud.com/list-of-facebook-keyboard-shortcuts-and-emoticons.html http://emojicodes.com/
 
 (map
  ;; All starter keys must be registered here.
@@ -48,43 +87,40 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
  ;; key.
  (map
   ("/" "/")
-  ("..." "…")
-  
-  ; other symbols    
-  ("c" "✔")
-  ("x" "✘")
-  ("iii" "🎆") ; fireworks
- ) ; map ends
+  ("..." "…"))
 
- (arrows
-  ("->" (delete @0) ("→←↑↓" "👉👈👆👇✋" "►◄▲▾◤◥◣◢")))
+ (multi-choice
+  ;; arrows
+  ("->" (delete @0) ("→←↑↓" "👉👈👆👇✋" "►◄▲▾◤◥◣◢"))
 
- (hand-gestures
-  ("||" (delete @0) ("👍👎👌✋👏🙆" "🙏👋🙌✌✊" "💁💪👊✍")))
+  ;; hand gestures
+  ("||" (delete @0) ("👍👎👌✋👏🙆" "🙏👋🙌✌✊" "💁💪👊✍"))
 
- (face-happy
-  (":)" (delete @0) ("☺😃😅😆😉😇" "😏😛😜😝😋" "💏💋😍😘😚😽😻" "💡😇")))
+  ;; happy faces
+  (":)" (delete @0) ("☺😃😅😆😉😇" "😏😛😜😝😋" "💏💋😍😘😚😽😻"))
 
- (face-unhappy
-  (":(" (delete @0) ("😢😩😡")))
+  ;; unhappy faces
+  (":(" (delete @0) ("😢😩😡"))
 
- (heart
-  ("<3" (delete @0) ("♥♡💔💖💘💓" "💞💕💌💑")))
-  
- (asterix-like
-  ("*" (delete @0) ("🌹💐❁✽" "⭐🌟💫✨🌠✯" "☀❂✷✸✹☄")))
+  ;; hearts
+  ("<3" (delete @0) ("♥♡💔💖💘💓" "💞💕💌💑"))
 
- (money
-  ("$" (delete @0) ("€£¥﷼₱₹" "💰💵💶💴💷")))
+  ;; flowers and stars
+  ("*" (delete @0) ("🌹💐❁✽" "★☆⭐🌟💫✨🌠✯" "☀❂✷✸✹☄"))
 
- (spiritual
-  ("&" (delete @0) ("☸☯♋☬卍卐" "✝☦✙✡☪" "💀☠👹👼😇" "💒⛪")))
-  
- (legal
-  ("@" (delete @0) ("©®™§")))
-  
- (test
-  ("tt" (delete @0) ("ABCDEFGH" "IJKLMNOP" "QRST" "UV" "WXYZ")))
+  ;; spiritual symbols.
+  ("&&" (delete @0) ("☸☯♋☬卍卐" "✝☦✙✡☪" "💀☠👹👼😇" "💒⛪"))
+
+  ;; checks
+  ("xx" (delete @0) ("✔✘☐☑☒"))
+
+  ;; currency symbols
+  ("$" (delete @0) ("€£¥﷼₱₹" "💰💵💶💴💷"))
+
+  ;; legal signs and text signs
+  ("@" (delete @0) ("©®™§¶†‡"))
+
+  )
 
  ;; Typing 1, 2, ..., 0 selects the 0th, 1st, ..., 9th candidate.
  (choose
@@ -132,16 +168,7 @@ If you prefer shorter key sequences, try \"ssymbol\"."))
 
  (main
   (map (move @<) (delete 1) (move @>) (shift init))
-  (hand-gestures (show) (shift select))
-  (face-happy (show) (shift select))
-  (face-unhappy (show) (shift select))
-  (asterix-like (show) (shift select))
-  (arrows (show) (shift select))
-  (spiritual (show) (shift select))
-  (legal (show) (shift select))
-  (money (show) (shift select))
-  (heart (show) (shift select))
-  (test (show) (shift select))
+  (multi-choice (show) (shift select))
   (nil (hide) (shift check-undo)))
 
  (check-undo
