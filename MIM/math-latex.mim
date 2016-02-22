@@ -157,6 +157,7 @@ you don't have to turn off this input method to input normal ASCII characters.")
 
     ("forall"      "∀")
     ("exists"      "∃")
+    ("existsnot"      "∄")
 
     ("and"         "∧")
     ("And"         "⋀") ; n-ary logical and
