@@ -358,8 +358,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (".h" "्")
   ) ; dependent end
 
- (dot_start
-  ("." "।")
+ (dot_start_default
   (".." "।")
   (".," "॥")
   ("./" "॰")
@@ -373,7 +372,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (".{" "।" (pushback 1))
   (".}" "।" (pushback 1))
   (".'" "।" (pushback 1))
-  (".\"" "।" (pushback 1))) ; dot_start ends
+  (".\"" "।" (pushback 1))) ; dot_start_default ends
 
  (commit-key
   ((S-C-Return)))
@@ -396,7 +395,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (consonant_with_space (shift state_init))
   (consonant_with_viraama (shift state_init))
   (independent (shift state_init))
-  (dot_start (shift state_init))
+  (dot_start_default (shift state_init))
   (backspace)
   (ayogavAhas (shift state_init))
   )
@@ -407,7 +406,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (consonant_with_space (shift state_init))
   (consonant_with_viraama (shift state_init))
   (dependent (shift state_init))
-  (dot_start (shift state_init))
+  (dot_start_default (shift state_init))
   (backspace)
   (ayogavAhas (shift state_init))
   )
