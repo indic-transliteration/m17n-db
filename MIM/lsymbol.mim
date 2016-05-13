@@ -102,6 +102,9 @@ See the documentation page of m17n input methods for more detail.
   ;; unhappy faces
   (":(" (delete @0) ("😢😩😡😭😪" "🙈🙊🙉"))
 
+  ;; neutral faces
+  (":|" (delete @0) ("🤔"))
+
   ;; hearts
   ("<3" (delete @0) ("♥♡💔💖💘💓" "💞💕💌💑😍😘"))
 
