@@ -342,7 +342,6 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ) ; dependent end
 
  (dot_start
-  ("." "।")
   (".." "।")
   (".," "॥")
   ("./" "॰")
