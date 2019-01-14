@@ -19,9 +19,9 @@
 ;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
 
-;; This file is branched from hi-sharada-itrans.mim.
+;; This file is branched from ks-sharada-itrans.mim.
 
-(input-method sa sharada-itrans)
+(input-method ks sharada-itrans)
 
 (description "Sanskrit sharada input method by ITRANS and Harvard-Kyoto
 transliteration systems.
@@ -42,7 +42,7 @@ For motivations and further details, see description of hi-sharada-itrans.mim.")
 (variable (trim-last-halant nil 0)
 (enable-udatta nil 1))
 
-(include (hi sharada-itrans) map)
+(include (ks sharada-itrans) map)
 
 (map
 (udattta
