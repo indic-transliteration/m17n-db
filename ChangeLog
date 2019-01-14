@@ -1,3 +1,142 @@
+2018-11-23  Santhosh Thottingal  <santhosh.thottingal@gmail.com>
+
+	* MIM/ml-swanalekha.mim: Adjusted for the latest Unicode.
+
+2018-02-08  K. Handa  <handa@gnu.org>
+
+	Version 1.8.0 released.
+
+	* configure.ac: Version changed to 1.8.0.
+
+2017-12-09  handa  <handa@gnu.org>
+
+	* MIM/zh-zhuyin.mim: Chinese input method name to zh-zhuyin.
+
+	* MIM/uk-kbd.mim: Renamed from ua-kbd.mim.  Language name fixed
+	(bug #45221).
+
+	* MIM/global.mim (first): Fix typo (bug #45075).
+
+2017-12-08  Jithin Thankachan <jithin@space-kerala.org>
+
+	* MIM/ml-enhanced-inscript.mim: New file.
+
+2017-12-08  Jón Fairbairn  <jf-nongnu@bookofsand.co.uk>
+
+	* MIM/rfc1345.mim: Add rules for a few more ASCII characters.
+
+2017-11-05  handa  <handa@gnu.org>
+
+	* FLT/LAOO-OTF.flt (layouter): Do not limit to "phetsarath ot".
+	Add OTF spec.
+
+2017-06-27  handa  <handa@gnu.org>
+
+	* FLT/BENG-OTF.flt (generator:lang-forms): Apply blwf,half,vatu to
+	multiple characters before HALANT.
+
+2017-06-27  U. Sudhakar <sudhakaru@cdac.in>
+
+	* MIM/mr-remigton.mim: New input method.
+
+        * MIM/mr-typewriter.mim: New input method.
+
+2017-01-24 Santosh Pradhan <sapradhan8@gmail.com>
+
+	* MIM/ne-rom-translit.mim: New input method.
+
+	* MIM/ne-trad-ttf.mim: New input method.
+
+	* icons/ne-trad-ttf.png: New icon file.
+
+2016-08-26  K. Handa  <handa@gnu.org>
+
+	* MIM/lsymbol.mim (multi-choice): Add more symbols for hand
+	gestures, happy/unhappy/neutral faces, hearts, stars, spiritual,
+	checks, and legal/text signs.
+
+	* .gitignore: Add "compile".
+
+2016-08-25  Mike FABIAN  <mfabian@redhat.com>
+
+	* MIM/hu-rovas-post.mim: New input method.
+
+2016-02-03  K. Handa  <handa@gnu.org>
+
+	* MIM/lsymbol.mim (multi-choice): Add more symbols.
+
+2016-02-02  K. Handa  <handa@gnu.org>
+
+	* MIM/lsymbol.mim (multi-choice): New maps for many symbols.
+	(choose, change-candidate, focus-move, focus-change, backspace)
+	(commit-preedit): New maps copied from zh-util.mim.
+	(check-undo, select): New states copied from zh-util.mim.
+
+2016-01-24  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/kn-optitransv2.mim: (dot_start): Renamed from danda.  Add
+	"./" key map.
+	(misc): Delete this map.
+	(state_init): Delete "misc" branch.  Change "danda" branch to
+	"dot_start".
+
+2016-01-20  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/hi-optitransv2.mim: (dot_start): Renamed from danda.  Add
+	"./" key map.
+	(misc): Delete this map.
+	(state_init): Delete "misc" branch.  Change "danda" branch to
+	"dot_start".
+
+2015-11-27  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/hi-optitransv2.mim: Improve the description string.
+
+	* MIM/kn-optitransv2.mim: Improve the description string.
+
+2015-11-25  B. Riefenstahl  <b.riefenstahl@turtle-trading.net>  (tiny chnage)
+
+	* FLT/HEBR-OTF.flt (category): Add Yiddish ligature.
+	(generator): Re-order marks.  Generalize the previous change (bug
+	#46399).
+
+2015-11-25  K. Handa  <handa@gnu.org>
+
+	* FLT/HEBR-OTF.flt (generator)  Add code for handling combining
+	marks not handled by OTF tables (bug #46399).
+
+2015-09-19  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/kn-optitransv2.mim (consonant_with_space): New map separated
+	from consonant.
+	(state_indic_letter, state_consonant_pressed) Add a branch for
+	consonant_with_space.
+
+	* MIM/hi-optitransv2.mim (consonant_with_space): New map separated
+	from consonant.
+	(state_indic_letter, state_consonant_pressed) Add a branch for
+	consonant_with_space.
+
+	* icons/hi-optitransv2.png: New icon file.
+
+	* icons/kn-optitransv2.png: New icon file.
+
+2015-09-19  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+	* MIM/kn-optitransv2.mim: New input method.
+
+	* MIM/hi-optitransv2.mim: New input method.
+
+2015-07-18  handa  <handa@gnu.org>
+
+	* FLT/COMBINING.flt: Suppress GSUB lookups.
+
+2015-04-05  K. Handa  <handa@gnu.org>
+
+	* m17n-db.in: Change encoding to utf-8.
+
+	* FORMATS/IM.ja.txt: Delete local variables section at the end.
+
 2014-12-12  K. Handa  <handa@gnu.org>
 
 	* Version 1.7.0 released.
