@@ -37,7 +37,7 @@ sequences such as the below.
 
 For motivations and further details, see description of hi-itrans.mim.")
 
-(title "क")
+(title "सं")
 
 (variable (trim-last-halant nil 0)
 	  (enable-udatta nil 1))
