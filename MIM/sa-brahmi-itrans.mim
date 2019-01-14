@@ -23,7 +23,7 @@
 
 (input-method sa brahmi-itrans)
 
-(description "Sanskrit input method by ITRANS and Harvard-Kyoto
+(description "Sanskrit brahmi input method by ITRANS and Harvard-Kyoto
 transliteration systems.
 
 You can use all the standard ITRANS key sequences plus key

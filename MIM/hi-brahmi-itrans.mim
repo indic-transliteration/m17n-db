@@ -1,6 +1,6 @@
 (input-method hi brahmi-itrans)
 
-(description "Hindi input method by ITRANS and Harvard-Kyoto
+(description "Hindi brAhmi input method by ITRANS and Harvard-Kyoto
 transliteration systems.
 You can use all the standard ITRANS key sequences plus key
 sequences such as the below.
