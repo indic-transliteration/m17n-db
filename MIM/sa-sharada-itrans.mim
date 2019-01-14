@@ -21,7 +21,7 @@
 
 ;; This file is branched from ks-sharada-itrans.mim.
 
-(input-method ks sharada-itrans)
+(input-method sa sharada-itrans)
 
 (description "Sanskrit sharada input method by ITRANS and Harvard-Kyoto
 transliteration systems.
@@ -35,9 +35,9 @@ nj->𑆚𑇀𑆘𑇀, njh->𑆚𑇀𑆙𑇀, nT->𑆟𑇀𑆛𑇀, nTh->𑆟𑇀
 c->𑆖𑇀, C->𑆗𑇀, z->𑆯𑇀, S->𑆰𑇀, jn->𑆘𑇀𑆚𑇀, R->𑆉
 _->॒, ''->॑
 
-For motivations and further details, see description of hi-sharada-itrans.mim.")
+For motivations and further details, see description of ks-sharada-itrans.mim.")
 
-(title "𑆑")
+(title "𑆱𑆁")
 
 (variable (trim-last-halant nil 0)
 (enable-udatta nil 1))
@@ -48,3 +48,57 @@ For motivations and further details, see description of hi-sharada-itrans.mim.")
 (udattta
 ("_" "॒")
 ("''" "॑")))
+
+(state
+(init
+(starter (pushback 1) (shift intermediate))
+(udattta)
+(misc))
+
+(intermediate
+;; CANDRA-E-O is set to the character CANDRA E or CANDRA O when "e"
+;; or "o" is typed, and in that case, if ".c" is typed, the
+;; character set to CANDRA-E-O is inserted.
+(t (set CANDRA-E-O 0))
+;; LAST-HALANT-POS is set to the position after a consonat + HALANT
+;; sequence. If the following key is for non-letter, that HALANT
+;; character is removed.
+(consonant (mark LAST-HALANT-POS) (shift second))
+(independent (cond (CANDRA-E-O (shift after-eo)) (1 (shift init))))
+(digit (shift init))
+(danda (shift init))
+(udattta (shift init))
+(backspace)
+(commit-key (shift init)))
+
+(second
+;; CANDRA-E-O is set to the character CANDRA E or CANDRA O when "e"
+;; or "o" is typed, and in that case, if ".c" is typed, the
+;; character set to CANDRA-E-O is inserted.
+(t (set CANDRA-E-O 0))
+(consonant (mark LAST-HALANT-POS))
+(dependent (cond (CANDRA-E-O (shift after-eo)) (1 (shift init))))
+(danda
+(cond (trim-last-halant (move LAST-HALANT-POS) (delete @-) (move @>)))
+(shift init))
+(udattta
+(cond (trim-last-halant (move LAST-HALANT-POS) (delete @-) (move @>)))
+(shift init))
+(backspace)
+(commit-key (shift init))
+(nil (cond (trim-last-halant (move LAST-HALANT-POS) (delete @-) (move @>)))
+(shift init)))
+
+(after-eo
+(t (set DOT 0))
+(dot)
+(eo-dot-c (shift init))
+(danda (shift init))
+(udattta (shift init))
+(commit-key (shift init))
+(nil (cond (DOT (delete @-) (pushback 1))) (shift init))))
+
+;; Local Variables:
+;; coding: utf-8
+;; mode: emacs-lisp
+;; End:

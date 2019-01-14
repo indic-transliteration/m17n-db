@@ -37,7 +37,7 @@ _->॒, ''->॑
 
 For motivations and further details, see description of hi-brahmi-itrans.mim.")
 
-(title "𑀓")
+(title "𑀲𑀁")
 
 (variable (trim-last-halant nil 0)
 (enable-udatta nil 1))
