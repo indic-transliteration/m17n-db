@@ -38,7 +38,7 @@ nj->ಂಜ್, njh->ಂಝ್, nT->ಂಟ್, nTh->ಂಠ್, nD->ಂಡ್, nDh
 c->ಚ್, C->ಛ್, z->ಶ್, S->ಷ್, jn->ಜ್ಞ್, R->ಋ
 
 The motivation behind additions made to the basic ITRANS scheme
-is described in http://sanskritnlp.appspot.com/optitrans.html,
+is described in https://sanskrit-coders.github.io/site/pages/input/optitrans.html,
 along with a tabulated comparison with several other
 transliteration schemes.
 
