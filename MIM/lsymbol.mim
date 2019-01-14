@@ -123,6 +123,8 @@ See the documentation page of m17n input methods for more detail.
   ;; legal signs and text signs
   ("@" (delete @0) ("©®™§¶†‡"))
 
+  ;; zero width joiners
+  ("z" (delete @0) ("‌"))
   )
 
  ;; Typing 1, 2, ..., 0 selects the 0th, 1st, ..., 9th candidate.
