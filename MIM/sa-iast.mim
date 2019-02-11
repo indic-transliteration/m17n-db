@@ -1,4 +1,4 @@
-;; sa-iast.mim -- Input method for Romanized Sanskrit/Pali using the ITRANS/ISO 15919 scheme.
+;; sa-iast.mim -- Input method for Romanized Sanskrit/Pali using a combination of IAST and the ISO 15919 scheme.
 ;; Copyright (C) 2011  William Giddings <wjgiddings@googlemail.com>
 
 ;; This file is part of the m17n contrib; a sub-part of the m17n
@@ -21,12 +21,12 @@
 
 (input-method sa IAST )
 
-(description "Romanized Sanskrit input method with IAST/ISO 15919 convention.
+(description "Romanized Sanskrit input method with IAST and ISO 15919 conventions.
 The table is based on 
-  <http://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration>
+  <http://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration> and https://en.wikipedia.org/wiki/ISO_15919.
 ")
 
-(title "ISO 15919")
+(title "IAST ISO-15919")
 
 (map
  (trans
