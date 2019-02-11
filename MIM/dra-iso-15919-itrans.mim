@@ -1,6 +1,6 @@
-(input-method kn iso-15919-itrans)
+(input-method dra iso-15919-itrans)
 
-(description "Kannada ISO-15919 input method roughly mapped from ITRANS and Harvard-Kyoto
+(description "Dravidian ISO-15919 input method roughly mapped from ITRANS and Harvard-Kyoto
 transliteration systems. Such a mapping is particularly useful for people who use ITRANS / Harvard-Kyoto based input methods (found for example in sa-itrans.mim) to type sanskrit in other scripts. Not having to memorize multiple input maps for multiple scripts is a plus.
 
 You can use all the standard ITRANS key sequences (other than ch, which has a different meaning in this script) plus key
@@ -26,7 +26,7 @@ transliteration schemes.
 
 Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 
-(title "kan")
+(title "dra iso-15919")
 
 (map
 
