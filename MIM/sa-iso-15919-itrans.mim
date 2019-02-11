@@ -13,6 +13,12 @@ c->c, C->ch, z->ś, S->ṣ, jn->jñ, R->r̥
 
 For Sanskrit, e and o are automatically mapped to ē and ō.
 
+Capital letters may be produced or forced by prefixing a ~, reduplicating a letter (T,D,N,R) for disambiguation where necessary. For example: 
+
+Raama or ~Raama -> Rāma, ~RRkaara -> R̥kāra, KRShNa or ~KRShNa -> Kr̥ṣṇa,
+~Tyaaga -> Tyāga, ~TTakaara -> Ṭakāra,  ~Dhiira -> Dhīra, ~DDhakaara -> Ḍhakāra,
+~LLakaara -> Ḷakāra
+
 The motivation behind additions made to the basic ITRANS scheme
 is described in https://sanskrit-coders.github.io/site/pages/input/optitrans.html,
 along with a tabulated comparison with several other
@@ -25,11 +31,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 (map
 
 (trans
-("K" "kh")
-("G" "gh")
 (".k" "q")
-(".kh" "k͟h")
-(".K" "k͟h")
 (".g" "ġ")
 ("nk" "ṅk")
 ("nx" "ṅkṣ")
@@ -38,9 +40,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 ("ng" "ṅg")
 ("ngh" "ṅgh")
 ("nG" "ṅgh")
-("~N" "ṅ")
-("N^" "ṅ")
-("J" "jh")
+(";N" "ṅ")  ; mutated from ITRANS - to allow for capital N input
 ("nch" "ñc")
 ("nCh" "ñch")	; not in ITRANS Devenagari table
 ("nc" "ñc")
@@ -52,33 +52,21 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 ("~n" "ñ")
 ("JN" "ñ")
 ("T" "ṭ")
-("Th" "ṭh")
 ("D" "ḍ")
 ("Dh" "ḍh")
-(".D" "ṛ")
-(".Dh" "ṛh")
 ("nT" "ṇṭ")
-("nTh" "ṇṭh")
 ("nD" "ṇḍ")
-("nDh" "ṇḍh")
 ("N" "ṇ")
 (":n" "ṉ")	; not in ITRANS Devenagari table
-("P" "ph")
 (".ph" "f")
-("B" "bh")
-("Y" "ẏ") ; not in ITRANS Devanagari table
 ("yh" "ẏ") ; not in ITRANS Devanagari table
-(".y" "ẏ")
-(".r" "r̆")
+("DR" "ṛ")
+(".r" "ṛ")
 ("L" "ḷ")
-("ld" "ḷ")
-("w" "v")
 ("sh" "ś")
 (".j" "z")
-; ("z" "ś")
 ("S" "ṣ")
 ("Sh" "ṣ")
-("shh" "ṣ")
 ("jn" "jñ")
 ("j~n" "jñ")
 ("jn" "jñ")
@@ -123,8 +111,73 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 (".a" "’")
 (".h" "")
 ("AUM" "ōṁ")
-("OM" "ōṁ"))
-)
+("OM" "ōṁ")
+
+; Capitals for use in the beginnings of words.
+("~~" "~")
+("~K" "K") ; adding this code for intuitive use.
+("~G" "G") ; adding this code for intuitive use.
+("~;N" "Ṇ")
+("~C" "C") ; adding this code for intuitive use.
+("~J" "J") ; adding this code for intuitive use.
+("~~n" "Ñ")
+("~T" "T") ; And not mUrdhanya T
+("~D" "D") ; And not mUrdhanya D
+("~N" "N") ; And not mUrdhanya N.
+("~TT" "Ṭ") ; Note extra T compared to lowercase map.
+("~DD" "Ḍ") ; Note extra D compared to lowercase map.
+("~NN" "Ṇ") ; Note extra N compared to lowercase map.
+("~P" "P") ; adding this code for intuitive use.
+("~B" "B") ; B works just fine - still adding this code for intuitive use.
+("~M" "M") 
+("~Y" "Y") ; adding this code for intuitive use.
+("~R" "R") ; adding this code for intuitive use.
+("~L" "L") ; adding this code for intuitive use.
+("~V" "V") ; adding this code for intuitive use.
+("~sh" "Ś")
+("~Sh" "Ś") ; And not mUrdhanya Sh.
+("~SH" "Ṣ")
+("~SS" "Ṣ") ; Note the extra S compared to lower case output map.
+("~S" "S")  ; And not mUrdhanya Sh.
+("~LL" "Ḷ")  ; Note the extra L compared to lower case output map.
+("~x" "Kṣ")
+("~jn" "Jñ")
+("~GY" "Jñ")
+
+("~A" "A")
+("~aa" "Ā")
+("~AA" "Ā") ; Note the extra A compared to lower case output map.
+("~ii" "Ī")
+("~I" "Ī")
+("~uu" "Ū")
+("~U" "Ū")
+("~RR" "R̥") ; Note the extra R compared to lower case output map.
+("~RRi" "R̥")
+("~R^i" "R̥")
+("~RRI" "R̥̄")	; not in ITRANS Devanagari table
+("~RRR" "R̥̄")	; Note the extra R compared to lower case output map.
+("~R^I" "R̥̄")	; not in ITRANS Devanagari table
+("~LLi" "L̥")	; not in ITRANS Devanagari table
+("~LLI" "L̥̄")	; not in ITRANS Devanagari table
+("~L^I" "L̥̄")	; not in ITRANS Devanagari table
+("EA" "Æ") ; not in ITRANS Devanagari table
+("~ee" "E")	; not in ITRANS Devanagari table
+("~E" "Ē")	; not in ITRANS Devanagari table
+("~EE" "E")
+("~e" "Ē")
+("~O" "Ō")	; not in ITRANS Devanagari table
+("~OO" "O")
+("~oo" "O") ; not in ITRANS Devanagari table
+("~o" "Ō")
+("~oa" "Ô")
+("~au" "Au")
+("~Au" "Au")
+("Au" "Au")
+("~.N" "M̐")
+("~H" "H")  ; And not visarga.
+("~AUM" "Ōṁ")
+("~OM" "Ōṁ")
+))
 
 (state
  (init
