@@ -7,9 +7,9 @@ You can use all the standard ITRANS key sequences (other than ch, which has a di
 sequences such as the below.
 
 nk->ṅk, nkh->ṅkh, ng->ṅg, ngh->ṅgh
-nch->ñc, nCh->ñch, nc->ñc, nC->ñch, nchh->ñch,
-nj->ñj, njh->ñjh, nT->ṇṭ, nTh->ṇṭh, nD->ṇḍ, nDh->ṇḍh
-c->c, C->ch, z->ś, S->ṣ, jn->jñ, R->r̥
+nc->ñc, nch->ñch, nj->ñj, njh->ñjh, 
+nT->ṇṭ, nTh->ṇṭh, nD->ṇḍ, nDh->ṇḍh
+S->ṣ, jn->jñ, R->r̥
 
 For Sanskrit, e and o are automatically mapped to ē and ō.
 
