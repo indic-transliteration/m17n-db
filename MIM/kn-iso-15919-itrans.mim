@@ -1,0 +1,127 @@
+(input-method kn iso-15919-itrans)
+
+(description "Kannada ISO-15919 input method roughly mapped from ITRANS and Harvard-Kyoto
+transliteration systems. Such a mapping is particularly useful for people who use ITRANS / Harvard-Kyoto based input methods (found for example in sa-itrans.mim) to type sanskrit in other scripts. Not having to memorize multiple input maps for multiple scripts is a plus.
+
+You can use all the standard ITRANS key sequences (other than ch, which has a different meaning in this script) plus key
+sequences such as the below.
+
+nk->ṅk, nkh->ṅkh, ng->ṅg, ngh->ṅgh
+nch->ñc, nCh->ñch, nc->ñc, nC->ñch, nchh->ñch,
+nj->ñj, njh->ñjh, nT->ṇṭ, nTh->ṇṭh, nD->ṇḍ, nDh->ṇḍh
+c->c, C->ch, z->ś, S->ṣ, jn->jñ, R->r̥
+
+Unlike Sanskrit, e and o are not automatically mapped to ē and ō.
+
+The motivation behind additions made to the basic ITRANS scheme
+is described in https://sanskrit-coders.github.io/site/pages/input/optitrans.html,
+along with a tabulated comparison with several other
+transliteration schemes.
+
+Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
+
+(title "kan")
+
+(map
+
+(trans
+("K" "kh")
+("G" "gh")
+(".k" "q")
+(".kh" "k͟h")
+(".K" "k͟h")
+(".g" "ġ")
+("nk" "ṅk")
+("nx" "ṅkṣ")
+("nkh" "ṅkh")
+("nK" "ṅkh")
+("ng" "ṅg")
+("ngh" "ṅgh")
+("nG" "ṅgh")
+("~N" "ṅ")
+("N^" "ṅ")
+("J" "jh")
+("nch" "ñc")
+("nCh" "ñch")	; not in ITRANS Devenagari table
+("nc" "ñc")
+("nC" "ñch")	; not in ITRANS Devenagari table
+("nchh" "ñch")
+("nj" "ñj")
+("njh" "ñjh")
+("nJ" "ñjh")
+("~n" "ñ")
+("JN" "ñ")
+("T" "ṭ")
+("Th" "ṭh")
+("D" "ḍ")
+("Dh" "ḍh")
+(".D" "ṛ")
+(".Dh" "ṛh")
+("nT" "ṇṭ")
+("nTh" "ṇṭh")
+("nD" "ṇḍ")
+("nDh" "ṇḍh")
+("N" "ṇ")
+(":n" "ṉ")	; not in ITRANS Devenagari table
+("P" "ph")
+(".ph" "f")
+("B" "bh")
+("Y" "ẏ") ; not in ITRANS Devanagari table
+("yh" "ẏ") ; not in ITRANS Devanagari table
+(".y" "ẏ")
+(".r" "r̆")
+("L" "ḷ")
+("ld" "ḷ")
+("w" "v")
+("sh" "ś")
+(".j" "z")
+; ("z" "ś")
+("S" "ṣ")
+("Sh" "ṣ")
+("shh" "ṣ")
+("jn" "jñ")
+("j~n" "jñ")
+("jn" "jñ")
+("GY" "jñ")
+("dny" "jñ")	; not in ITRANS Devanagari table
+("x" "kṣ")
+("aa" "ā")
+("A" "ā")
+("ii" "ī")
+("I" "ī")
+("uu" "ū")
+("U" "ū")
+("R" "r̥")
+("RRi" "r̥")
+("R^i" "r̥")
+("LL" "ḷḷ")	; not in ITRANS Devanagari table
+("LLi" "l̥")	; not in ITRANS Devanagari table
+("L^i" "l̥")	; not in ITRANS Devanagari table
+("ea" "æ") ; not in ITRANS Devanagari table
+("ee" "ē")	; not in ITRANS Devanagari table
+("E" "ē")	; not in ITRANS Devanagari table
+("oo" "ō") ; not in ITRANS Devanagari table
+("O" "ō")	; not in ITRANS Devanagari table
+("o" "o")
+("oa" "ô")
+("au" "au")
+("RRI" "r̥̄")	; not in ITRANS Devanagari table
+("RR" "r̥̄")	; not in ITRANS Devanagari table
+("R^I" "r̥̄")	; not in ITRANS Devanagari table
+("LLI" "l̥̄")	; not in ITRANS Devanagari table
+("L^I" "l̥̄")	; not in ITRANS Devanagari table
+(".N" "m̐")
+(".n" "ṁ")
+("M" "ṁ")
+("H" "ḥ")
+("kH" "ẖ") 
+("pH" "ḫ")
+(".a" "’")
+(".h" "")
+("AUM" "ōṁ")
+("OM" "ōṁ"))
+)
+
+(state
+ (init
+  (trans)))
