@@ -139,8 +139,10 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 ("~S" "S")  ; And not mUrdhanya Sh.
 ("~LL" "Ḷ")  ; Note the extra L compared to lower case output map.
 ("~x" "Kṣ")
+("~X" "KṢ")
 ("~jn" "Jñ")
 ("~GY" "Jñ")
+("~JN" "JÑ")
 
 ("~A" "A")
 ("~aa" "Ā")
@@ -168,6 +170,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 ("~oa" "Ô")
 ("~au" "Au")
 ("~Au" "Au")
+("~AU" "AU")
 ("Au" "Au")
 ("~.N" "M̐")
 ("~H" "H")  ; And not visarga.
